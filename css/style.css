@@ -18,3 +18,12 @@
 body{
     font-family: sans-serif;
 }
+
+.square{
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    line-height: 200px;
+    vertical-align: middle;
+    font-size: 50px;
+}
