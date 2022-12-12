@@ -31,8 +31,6 @@ const pcThrow = document.getElementById('pc-throw');
 const winner = document.getElementById('winner');
 const throwButton = document.getElementById('throw-button');
 
-
-console.log(userThrow,pcThrow);
 //2- Creo evento a pressione bottone
 
 throwButton.addEventListener ('click', function(){
@@ -54,6 +52,53 @@ else if (userNumber > pcNumber){
 userThrow.innerText = userNumber;
 pcThrow.innerText = pcNumber;
 winner.innerText = winMessage ;
+
+});
+
+
+
+
+// ! ESERCIZO 2
+
+/*
+1-Creo array;
+2- Prendo elementi dal dom
+3- confornto la lista a pressione bottone
+4- Recupero valore inserito
+5- stampo messaggio
+
+
+*/
+
+//1-Creo array;
+
+const eMail = ['sergio@gmail.com','sara@gmail.com','marco@gmail.com','patrizio@gmail.com','mario@gmail.com'];
+
+//2- Prendo elementi dal dom
+
+const digitatedEmail = document.getElementById('email');
+const validButton = document.getElementById('valid-button');
+const validation = document.getElementById('validation');
+
+
+
+//3- confornto la lista a pressione botton
+
+validButton.addEventListener('click', function(){
+
+
+    // 4- Recupero valore inserito
+    const userMail = digitatedEmail.value.trim();
+
+    let validMessage ='NON AUTORIZZATO!';
+    
+for (let i = 0 ; i < eMail.length ; i++){
+   if(eMail[i] === userMail){
+     validMessage='AUTORIZZATO!'
+   }
+   
+validation.innerText = validMessage;
+}
 
 
 
