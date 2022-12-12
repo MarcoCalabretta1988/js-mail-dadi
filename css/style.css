@@ -20,7 +20,8 @@ body{
 }
 
 section{
-margin:50px 0;
+margin:100px 0;
+border: 2px solid red;
 }
 
 /* SECTION DICE */
@@ -35,3 +36,6 @@ margin:50px 0;
 
 /* SECTION EMAIL VALIDATION */
 
+#valditation{
+    color: rgb(167, 10, 10);
+}

@@ -86,17 +86,20 @@ const validation = document.getElementById('validation');
 
 validButton.addEventListener('click', function(){
 
-
     // 4- Recupero valore inserito
     const userMail = digitatedEmail.value.trim();
 
     let validMessage ='NON AUTORIZZATO!';
-    
+
 for (let i = 0 ; i < eMail.length ; i++){
    if(eMail[i] === userMail){
-     validMessage='AUTORIZZATO!'
+     validMessage='AUTORIZZATO!';
+     validation.classList.add('text-success');
    }
-   
+
+digitatedEmail.value ='';
+
+//5- stampo messaggio
 validation.innerText = validMessage;
 }
 
