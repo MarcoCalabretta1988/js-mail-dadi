@@ -35,9 +35,15 @@ const throwButton = document.getElementById('throw-button');
 
 throwButton.addEventListener ('click', function(){
 
+ 
+
 //3- creo due variabili randomiche
 const userNumber = Math.floor(Math.random() * 6) +1;
 const pcNumber = Math.floor(Math.random() * 6) +1;
+
+
+
+
 let winMessage = 'PAREGGIO!';
 
 //4-le confronto
@@ -89,18 +95,23 @@ validButton.addEventListener('click', function(){
     // 4- Recupero valore inserito
     const userMail = digitatedEmail.value.trim();
 
-    let validMessage ='NON AUTORIZZATO!';
+       //validazione
+       if(!userMail){
+        validation.innerText = 'NON HAI INSERITO ALCUNA MAIL';
+        return;
+       }
 
-for (let i = 0 ; i < eMail.length ; i++){
+    let isValid = false;
+
+for (let i = 0 ; i < eMail.length && !isValid ; i++){
    if(eMail[i] === userMail){
-     validMessage='AUTORIZZATO!';
-     validation.classList.add('text-success');
+     isValid = true;
    }
 
-digitatedEmail.value ='';
+
 
 //5- stampo messaggio
-validation.innerText = validMessage;
+validation.innerText = isValid ? 'AUTORIZZATO' : 'NON AUTORIZZATO';
 }
 
 
